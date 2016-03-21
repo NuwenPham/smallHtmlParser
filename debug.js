@@ -3,7 +3,7 @@ window.onload = function() {
     var rx = /(  +|\n)/;
     var rx2 = /(")/;
 
-    window.single_tags = ["meta","br", "img", "options", "input", "!DOCTYPE"]
+    window.single_tags = ["meta","br", "img", "options", "input", "!DOCTYPE"];
 
     var tests = [];
     tests[0] = "<!DOCTYPE html><div class=\"lol\"     id='gg'   ><!--asda<div>\n</div>sd--><br>sdfsdf<div class=\"sdfsf lol\">AAAAAAAAAA</div></div>";

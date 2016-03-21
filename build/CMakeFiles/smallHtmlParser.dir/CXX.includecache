@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pham/someScripts/footclothTopo/codetree/sources/dom_tree.cpp
+dom_tree.h
+/home/pham/someScripts/footclothTopo/codetree/sources/dom_tree.h
+
+/home/pham/someScripts/footclothTopo/codetree/sources/dom_tree.h
+

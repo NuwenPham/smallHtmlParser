@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -pthread    CMakeFiles/smallHtmlParser.dir/main.cpp.o CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o  -o smallHtmlParser -rdynamic 

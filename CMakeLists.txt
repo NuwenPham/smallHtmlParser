@@ -6,6 +6,8 @@ project(${PROJECT_NAME})
 
 set( SOURCES
     main.cpp
+    sources/dom_tree.h
+    sources/dom_tree.cpp
     )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")

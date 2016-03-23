@@ -9,8 +9,9 @@ window.onload = function() {
     tests[0] = "<!DOCTYPE html><div class=\"lol\"     id='gg'   ><!--asda<div>\n</div>sd--><br>sdfsdf<div class=\"sdfsf lol\">AAAAAAAAAA</div></div>";
     tests[1] = "<!DOCTYPE html><html><head lang=\"en\"><meta charset=\"UTF-8\"><title></title><script src=\"Base.js\"></script><script src=\"test.js\"></script><script src=\"debug.js\"></script></head><body style=\"background: #555; color:#fff\"></body></html>";
     tests[2] = "<!DOCTYPE html><html><head lang=\"en\"><meta charset=\"UTF-8\"><title></title><script src=\"Base.js\"></script><script src=\"graph/graph.js\"></script><script class='LOL'>function(){var lol = '<div></div>'}</script><script src=\"debug.js\"></script></head><body style=\"background: #555; color:#fff\"><div id=\"fps_output\">fps: 0</div><canvas id=\"container\"></canvas><br><input type=\"button\" value=\"quadrants\" onclick=\"showQuad()\"><input type=\"button\" value=\"COMS\" onclick=\"showCOMS()\"><input type=\"button\" value=\"Vectors\" onclick=\"showVectors()\"></body></html>" ;
+    tests[3] = "<script>var a = \"<div></div></div></div>\"</script>";
 
-    var testHtml = tests[2];
+    var testHtml = tests[3];
 
 
     var dtree = window.dtree = new DTree();
@@ -32,19 +33,52 @@ var DTree = CClass.inherit({
     "build":function(_string){
         var parser = new DParser();
         var result, pos = 0, prevNodeStartPos = 0, prevNodeLength = 0, blockValueNode;
+        var scriptStart = 0, scriptEnd = 0, deep = 0, isScript = false; // attention
         var path = [this.rootNode];
         while(result = parser.searchBody(_string, "<", ">", pos)){
             if(result.success) {
                 pos = result.end;
                 var tagContent = parser.parseHTMLTag(result.body);
 
+                var parent = path[path.length - 1];
 
-                if ( tagContent.status == "open" || tagContent.status == "single" ) {
+                // Поиск подстроки внутри тага script ( так же можно искать и в других тагах, в которых не может быть структуры DOMA )\
+                // ВАРИАНТ первый. Ищем по старинке.
+                //------------
+                if( !true ) {
+                    if ( parent.tag == "script" ) { // родительский таг есть скрипт
+
+                        if ( !(tagContent.name == "script" || tagContent.name == "/script") ) {
+                            continue;
+                        }
+
+                        if ( tagContent.status == "open" ) { // статус - открыт
+                            deep++; // увеличиваем глубину
+                        } else if ( tagContent.status == "close" ) {
+                            deep--; // уменьшаем глубину ( с целью, что бы определить, когда все таги были пройдены )
+                        }
+                        if ( tagContent.status == "close" && deep == 0 ) { // Если статус закрыт и глубина нулевая - конец
+                            isScript = false; // Условие выключено
+                        } else {
+                            continue; // во всех остальных случаях пропускаем выполнение цикла и идем на следующую итерацию
+                        }
+                    }
+                    if ( tagContent.name == "script" && !isScript ) { // Если так скрипт и он в false
+                        isScript = true; // взводим флаг
+                        deep++; // увеличиваем глубину
+                    }
+                }
+                //------------
+                // ВАРИАНТ второй. Находим все строки .
+                // Ищем две кавычки, ищем так. Кто ближе - тот и прав.
+
+
+                if ( tagContent.status == "open" || tagContent.status == "single" ) { // Статус открыт или единственный
                     var node = new DNode({
-                        tag : tagContent.name,
-                        attrs : tagContent.attrs
+                        tag : tagContent.name, // имя нода
+                        attrs : tagContent.attrs // аттрибуты нода
                     });
-                    if ( result.start != (prevNodeStartPos + prevNodeLength) ) {
+                    if ( result.start != (prevNodeStartPos + prevNodeLength) ) { //
                         blockValueNode = new DNode({
                             tag : "block.value",
                             content : _string.substring(result.start, (prevNodeStartPos + prevNodeLength))

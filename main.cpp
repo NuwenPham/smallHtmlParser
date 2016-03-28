@@ -5,12 +5,6 @@
 
 int main(int argc, char **argv)
 {
-   int a = 0;
-   while(a < argc ){
-      std::cout << argv[a] << std::endl;
-      a++;
-   }
-
 
    return 0;
 }

@@ -1,11 +1,12 @@
+#ifndef DOM_TREE
+#define DOM_TREE
+
 #include <string>
-class DOMtree
+class DOMTree
 {
 public:
-    DOMtree();
-    ~DOMtree();
-    void build(std::string _html_source)
-    {
-
-    }
-}
+    DOMTree();
+    ~DOMTree();
+    void build(std::string _html_source);
+};
+#endif

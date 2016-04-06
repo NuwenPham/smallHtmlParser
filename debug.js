@@ -9,7 +9,7 @@ window.onload = function() {
     tests[0] = "<!DOCTYPE html><div class=\"lol\"     id='gg'   ><!--asda<div>\n</div>sd--><br>sdfsdf<div class=\"sdfsf lol\">AAAAAAAAAA</div></div>";
     tests[1] = "<!DOCTYPE html><html><head lang=\"en\"><meta charset=\"UTF-8\"><title></title><script src=\"Base.js\"></script><script src=\"test.js\"></script><script src=\"debug.js\"></script></head><body style=\"background: #555; color:#fff\"></body></html>";
     tests[2] = "<!DOCTYPE html><html><head lang=\"en\"><meta charset=\"UTF-8\"><title></title><script src=\"Base.js\"></script><script src=\"graph/graph.js\"></script><script class='LOL'>function(){var lol = '<div></div>'}</script><script src=\"debug.js\"></script></head><body style=\"background: #555; color:#fff\"><div id=\"fps_output\">fps: 0</div><canvas id=\"container\"></canvas><br><input type=\"button\" value=\"quadrants\" onclick=\"showQuad()\"><input type=\"button\" value=\"COMS\" onclick=\"showCOMS()\"><input type=\"button\" value=\"Vectors\" onclick=\"showVectors()\"></body></html>" ;
-    tests[3] = "<script>var a = \"<div></div></div></div>\"</script>";
+    tests[3] = "<script>var a = \"<div></div></div></div>\";var b = '</script>';var ddd = /sd/;</script>";
 
     var testHtml = tests[3];
 
@@ -29,6 +29,27 @@ var DTree = CClass.inherit({
     },
     "destructor" : function () {
         CClass.fn.destructor.call(this);
+    },
+    "analyseScript":function(_string, _posStart){
+        var parser = new DParser(), result;
+        var rx = /(\/|'|"|<)/;
+        var pos = _posStart;
+        var string = _string.substring(_posStart, _string.length);
+        pos = 0;
+        while(true) {
+            var string = string.substring(pos, string.length);
+            console.log(string);
+            var match = string.match(rx);
+            if ( match[1] !== "<" ) {
+                result = parser.searchBracket(string, match[1], match.index);
+                pos = result.end + 1;
+            } else {
+                break;
+            }
+        }
+
+        console.log(match);
+
     },
     "build":function(_string){
         var parser = new DParser();
@@ -72,6 +93,11 @@ var DTree = CClass.inherit({
                 // ВАРИАНТ второй. Находим все строки .
                 // Ищем две кавычки, ищем так. Кто ближе - тот и прав.
 
+                if ( tagContent.name == "script" ) { // родительский таг есть скрипт
+                    var add = 0;
+
+                    this.analyseScript(_string, result.end);
+                }
 
                 if ( tagContent.status == "open" || tagContent.status == "single" ) { // Статус открыт или единственный
                     var node = new DNode({

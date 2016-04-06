@@ -98,17 +98,118 @@ CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o.provides: CMakeFiles/small
 
 CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o.provides.build: CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o
 
+CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o: CMakeFiles/smallHtmlParser.dir/flags.make
+CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o: ../sources/dom_node.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o -c /home/pham/someScripts/footclothTopo/codetree/sources/dom_node.cpp
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pham/someScripts/footclothTopo/codetree/sources/dom_node.cpp > CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.i
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pham/someScripts/footclothTopo/codetree/sources/dom_node.cpp -o CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.s
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o.requires:
+.PHONY : CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o.requires
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o.provides: CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o.provides.build
+.PHONY : CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o.provides
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o.provides.build: CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o: CMakeFiles/smallHtmlParser.dir/flags.make
+CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o: ../sources/dom_attribute.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o -c /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.cpp
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.cpp > CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.i
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.cpp -o CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.s
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o.requires:
+.PHONY : CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o.requires
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o.provides: CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o.provides.build
+.PHONY : CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o.provides
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o.provides.build: CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o: CMakeFiles/smallHtmlParser.dir/flags.make
+CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o: ../sources/dom_parser.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o -c /home/pham/someScripts/footclothTopo/codetree/sources/dom_parser.cpp
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pham/someScripts/footclothTopo/codetree/sources/dom_parser.cpp > CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.i
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pham/someScripts/footclothTopo/codetree/sources/dom_parser.cpp -o CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.s
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o.requires:
+.PHONY : CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o.requires
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o.provides: CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o.provides.build
+.PHONY : CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o.provides
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o.provides.build: CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o: CMakeFiles/smallHtmlParser.dir/flags.make
+CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o: ../sources/dom_tag_content.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o -c /home/pham/someScripts/footclothTopo/codetree/sources/dom_tag_content.cpp
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pham/someScripts/footclothTopo/codetree/sources/dom_tag_content.cpp > CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.i
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pham/someScripts/footclothTopo/codetree/sources/dom_tag_content.cpp -o CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.s
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o.requires:
+.PHONY : CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o.requires
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o.provides: CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o.requires
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o.provides.build
+.PHONY : CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o.provides
+
+CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o.provides.build: CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o
+
 # Object files for target smallHtmlParser
 smallHtmlParser_OBJECTS = \
 "CMakeFiles/smallHtmlParser.dir/main.cpp.o" \
-"CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o"
+"CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o" \
+"CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o" \
+"CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o" \
+"CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o" \
+"CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o"
 
 # External object files for target smallHtmlParser
 smallHtmlParser_EXTERNAL_OBJECTS =
 
 smallHtmlParser: CMakeFiles/smallHtmlParser.dir/main.cpp.o
 smallHtmlParser: CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o
+smallHtmlParser: CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o
+smallHtmlParser: CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o
+smallHtmlParser: CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o
+smallHtmlParser: CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o
 smallHtmlParser: CMakeFiles/smallHtmlParser.dir/build.make
+smallHtmlParser: /usr/lib64/libboost_regex.so
 smallHtmlParser: CMakeFiles/smallHtmlParser.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable smallHtmlParser"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/smallHtmlParser.dir/link.txt --verbose=$(VERBOSE)
@@ -119,6 +220,10 @@ CMakeFiles/smallHtmlParser.dir/build: smallHtmlParser
 
 CMakeFiles/smallHtmlParser.dir/requires: CMakeFiles/smallHtmlParser.dir/main.cpp.o.requires
 CMakeFiles/smallHtmlParser.dir/requires: CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o.requires
+CMakeFiles/smallHtmlParser.dir/requires: CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o.requires
+CMakeFiles/smallHtmlParser.dir/requires: CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o.requires
+CMakeFiles/smallHtmlParser.dir/requires: CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o.requires
+CMakeFiles/smallHtmlParser.dir/requires: CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o.requires
 .PHONY : CMakeFiles/smallHtmlParser.dir/requires
 
 CMakeFiles/smallHtmlParser.dir/clean:

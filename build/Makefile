@@ -138,6 +138,102 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sources/dom_attribute.o: sources/dom_attribute.cpp.o
+.PHONY : sources/dom_attribute.o
+
+# target to build an object file
+sources/dom_attribute.cpp.o:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o
+.PHONY : sources/dom_attribute.cpp.o
+
+sources/dom_attribute.i: sources/dom_attribute.cpp.i
+.PHONY : sources/dom_attribute.i
+
+# target to preprocess a source file
+sources/dom_attribute.cpp.i:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.i
+.PHONY : sources/dom_attribute.cpp.i
+
+sources/dom_attribute.s: sources/dom_attribute.cpp.s
+.PHONY : sources/dom_attribute.s
+
+# target to generate assembly for a file
+sources/dom_attribute.cpp.s:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.s
+.PHONY : sources/dom_attribute.cpp.s
+
+sources/dom_node.o: sources/dom_node.cpp.o
+.PHONY : sources/dom_node.o
+
+# target to build an object file
+sources/dom_node.cpp.o:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o
+.PHONY : sources/dom_node.cpp.o
+
+sources/dom_node.i: sources/dom_node.cpp.i
+.PHONY : sources/dom_node.i
+
+# target to preprocess a source file
+sources/dom_node.cpp.i:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.i
+.PHONY : sources/dom_node.cpp.i
+
+sources/dom_node.s: sources/dom_node.cpp.s
+.PHONY : sources/dom_node.s
+
+# target to generate assembly for a file
+sources/dom_node.cpp.s:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.s
+.PHONY : sources/dom_node.cpp.s
+
+sources/dom_parser.o: sources/dom_parser.cpp.o
+.PHONY : sources/dom_parser.o
+
+# target to build an object file
+sources/dom_parser.cpp.o:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o
+.PHONY : sources/dom_parser.cpp.o
+
+sources/dom_parser.i: sources/dom_parser.cpp.i
+.PHONY : sources/dom_parser.i
+
+# target to preprocess a source file
+sources/dom_parser.cpp.i:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.i
+.PHONY : sources/dom_parser.cpp.i
+
+sources/dom_parser.s: sources/dom_parser.cpp.s
+.PHONY : sources/dom_parser.s
+
+# target to generate assembly for a file
+sources/dom_parser.cpp.s:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.s
+.PHONY : sources/dom_parser.cpp.s
+
+sources/dom_tag_content.o: sources/dom_tag_content.cpp.o
+.PHONY : sources/dom_tag_content.o
+
+# target to build an object file
+sources/dom_tag_content.cpp.o:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o
+.PHONY : sources/dom_tag_content.cpp.o
+
+sources/dom_tag_content.i: sources/dom_tag_content.cpp.i
+.PHONY : sources/dom_tag_content.i
+
+# target to preprocess a source file
+sources/dom_tag_content.cpp.i:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.i
+.PHONY : sources/dom_tag_content.cpp.i
+
+sources/dom_tag_content.s: sources/dom_tag_content.cpp.s
+.PHONY : sources/dom_tag_content.s
+
+# target to generate assembly for a file
+sources/dom_tag_content.cpp.s:
+	$(MAKE) -f CMakeFiles/smallHtmlParser.dir/build.make CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.s
+.PHONY : sources/dom_tag_content.cpp.s
+
 sources/dom_tree.o: sources/dom_tree.cpp.o
 .PHONY : sources/dom_tree.o
 
@@ -174,6 +270,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sources/dom_attribute.o"
+	@echo "... sources/dom_attribute.i"
+	@echo "... sources/dom_attribute.s"
+	@echo "... sources/dom_node.o"
+	@echo "... sources/dom_node.i"
+	@echo "... sources/dom_node.s"
+	@echo "... sources/dom_parser.o"
+	@echo "... sources/dom_parser.i"
+	@echo "... sources/dom_parser.s"
+	@echo "... sources/dom_tag_content.o"
+	@echo "... sources/dom_tag_content.i"
+	@echo "... sources/dom_tag_content.s"
 	@echo "... sources/dom_tree.o"
 	@echo "... sources/dom_tree.i"
 	@echo "... sources/dom_tree.s"

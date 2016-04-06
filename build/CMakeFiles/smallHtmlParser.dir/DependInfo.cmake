@@ -5,6 +5,10 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/pham/someScripts/footclothTopo/codetree/main.cpp" "/home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles/smallHtmlParser.dir/main.cpp.o"
+  "/home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.cpp" "/home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o"
+  "/home/pham/someScripts/footclothTopo/codetree/sources/dom_node.cpp" "/home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o"
+  "/home/pham/someScripts/footclothTopo/codetree/sources/dom_parser.cpp" "/home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o"
+  "/home/pham/someScripts/footclothTopo/codetree/sources/dom_tag_content.cpp" "/home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o"
   "/home/pham/someScripts/footclothTopo/codetree/sources/dom_tree.cpp" "/home/pham/someScripts/footclothTopo/codetree/build/CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")

@@ -2,8 +2,13 @@
 #define DOM_TREE
 
 #include <string>
+#include <vector>
+#include "dom_node.h"
 class DOMTree
 {
+protected:
+   DOMNode* rootNode;
+   std::vector<DOMNode*> nodeCollection;
 public:
     DOMTree();
     ~DOMTree();

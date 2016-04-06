@@ -3,7 +3,27 @@
 
 CMakeFiles/smallHtmlParser.dir/main.cpp.o
  /home/pham/someScripts/footclothTopo/codetree/main.cpp
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.h
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_node.h
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_parser.h
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_tag_content.h
  /home/pham/someScripts/footclothTopo/codetree/sources/dom_tree.h
+CMakeFiles/smallHtmlParser.dir/sources/dom_attribute.cpp.o
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.cpp
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.h
+CMakeFiles/smallHtmlParser.dir/sources/dom_node.cpp.o
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.h
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_node.cpp
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_node.h
+CMakeFiles/smallHtmlParser.dir/sources/dom_parser.cpp.o
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.h
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_parser.cpp
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_parser.h
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_tag_content.h
+CMakeFiles/smallHtmlParser.dir/sources/dom_tag_content.cpp.o
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_tag_content.cpp
 CMakeFiles/smallHtmlParser.dir/sources/dom_tree.cpp.o
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_attribute.h
+ /home/pham/someScripts/footclothTopo/codetree/sources/dom_node.h
  /home/pham/someScripts/footclothTopo/codetree/sources/dom_tree.cpp
  /home/pham/someScripts/footclothTopo/codetree/sources/dom_tree.h

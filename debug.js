@@ -13,7 +13,7 @@ window.onload = function() {
     tests[3] = "<script>var a = \"<div></div></div></div>\";var b =          '</script>';        var ddd = /sd/;  var ddsd = /sds12d/;</script><div> </div>";
     tests[4] = "<div>211111 </a>asdfasdf</div>";
 
-    var testHtml = tests[2];
+    var testHtml = tests[4];
 
 
     var dtree = window.dtree = new DTree();
@@ -84,7 +84,7 @@ var DTree = CClass.inherit({
                 } else if ( tagContent.status == "close" ) {
 
                     if(path[path.length - 1].tag !== tagContent.name.substring(1, tagContent.name.length) && path[path.length - 1].tag !== "root"){
-                        throw new Error("Позвольте, ошибочка вышла. Так делать-то, ай как мерзко!");
+                        throw new Error("Not found opening tag: <" + tagContent.name.substring(1, tagContent.name.length) + ">.");
                     }
 
                     // проверочку надо сделать

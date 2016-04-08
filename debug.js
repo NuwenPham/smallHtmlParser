@@ -9,9 +9,11 @@ window.onload = function() {
     tests[0] = "<!DOCTYPE html><div class=\"lol\"     id='gg'   ><!--asda<div>\n</div>sd--><br>sdfsdf<div class=\"sdfsf lol\">AAAAAAAAAA</div></div>";
     tests[1] = "<!DOCTYPE html><html><head lang=\"en\"><meta charset=\"UTF-8\"><title></title><script src=\"Base.js\"></script><script src=\"test.js\"></script><script src=\"debug.js\"></script></head><body style=\"background: #555; color:#fff\"></body></html>";
     tests[2] = "<!DOCTYPE html><html><head lang=\"en\"><meta charset=\"UTF-8\"><title></title><script src=\"Base.js\"></script><script src=\"graph/graph.js\"></script><script class='LOL'>function(){var lol = '<div></div>'}</script><script src=\"debug.js\"></script></head><body style=\"background: #555; color:#fff\"><div id=\"fps_output\">fps: 0</div><canvas id=\"container\"></canvas><br><input type=\"button\" value=\"quadrants\" onclick=\"showQuad()\"><input type=\"button\" value=\"COMS\" onclick=\"showCOMS()\"><input type=\"button\" value=\"Vectors\" onclick=\"showVectors()\"></body></html>" ;
-    tests[3] = "<script>var a = \"<div></div></div></div>\";var b = '</script>';var ddd = /sd/;</script>";
+    //tests[3] = "<div> asdasd </div>";
+    tests[3] = "<script>var a = \"<div></div></div></div>\";var b =          '</script>';        var ddd = /sd/;  var ddsd = /sds12d/;</script><div> </div>";
+    tests[4] = "<div>211111 </a>asdfasdf</div>";
 
-    var testHtml = tests[3];
+    var testHtml = tests[2];
 
 
     var dtree = window.dtree = new DTree();
@@ -30,75 +32,39 @@ var DTree = CClass.inherit({
     "destructor" : function () {
         CClass.fn.destructor.call(this);
     },
-    "analyseScript":function(_string, _posStart){
+    "analyseScript":function(_string, _posStart) {
         var parser = new DParser(), result;
         var rx = /(\/|'|"|<)/;
         var pos = _posStart;
+        var indexes = _posStart;
         var string = _string.substring(_posStart, _string.length);
-        pos = 0;
-        while(true) {
-            var string = string.substring(pos, string.length);
-            console.log(string);
+        while ( true ) {
             var match = string.match(rx);
+            indexes += match.index;
             if ( match[1] !== "<" ) {
                 result = parser.searchBracket(string, match[1], match.index);
+                console.log(result.match);
                 pos = result.end + 1;
+                indexes += (result.end - result.start + 1);
+
             } else {
                 break;
             }
+            string = string.substring(pos, string.length);
         }
-
-        console.log(match);
-
+        return {
+            start : _posStart,
+            end : indexes
+        }
     },
     "build":function(_string){
         var parser = new DParser();
-        var result, pos = 0, prevNodeStartPos = 0, prevNodeLength = 0, blockValueNode;
-        var scriptStart = 0, scriptEnd = 0, deep = 0, isScript = false; // attention
+        var result, pos = 0, prevNodeStartPos = 0, prevNodeLength = 0, blockValueNode, prevNodeEnd;
         var path = [this.rootNode];
         while(result = parser.searchBody(_string, "<", ">", pos)){
             if(result.success) {
                 pos = result.end;
                 var tagContent = parser.parseHTMLTag(result.body);
-
-                var parent = path[path.length - 1];
-
-                // Поиск подстроки внутри тага script ( так же можно искать и в других тагах, в которых не может быть структуры DOMA )\
-                // ВАРИАНТ первый. Ищем по старинке.
-                //------------
-                if( !true ) {
-                    if ( parent.tag == "script" ) { // родительский таг есть скрипт
-
-                        if ( !(tagContent.name == "script" || tagContent.name == "/script") ) {
-                            continue;
-                        }
-
-                        if ( tagContent.status == "open" ) { // статус - открыт
-                            deep++; // увеличиваем глубину
-                        } else if ( tagContent.status == "close" ) {
-                            deep--; // уменьшаем глубину ( с целью, что бы определить, когда все таги были пройдены )
-                        }
-                        if ( tagContent.status == "close" && deep == 0 ) { // Если статус закрыт и глубина нулевая - конец
-                            isScript = false; // Условие выключено
-                        } else {
-                            continue; // во всех остальных случаях пропускаем выполнение цикла и идем на следующую итерацию
-                        }
-                    }
-                    if ( tagContent.name == "script" && !isScript ) { // Если так скрипт и он в false
-                        isScript = true; // взводим флаг
-                        deep++; // увеличиваем глубину
-                    }
-                }
-                //------------
-                // ВАРИАНТ второй. Находим все строки .
-                // Ищем две кавычки, ищем так. Кто ближе - тот и прав.
-
-                if ( tagContent.name == "script" ) { // родительский таг есть скрипт
-                    var add = 0;
-
-                    this.analyseScript(_string, result.end);
-                }
-
                 if ( tagContent.status == "open" || tagContent.status == "single" ) { // Статус открыт или единственный
                     var node = new DNode({
                         tag : tagContent.name, // имя нода
@@ -116,10 +82,16 @@ var DTree = CClass.inherit({
                     path[path.length - 1].addChild(node);
                     path.push(node);
                 } else if ( tagContent.status == "close" ) {
-                    if ( result.start != (prevNodeStartPos + prevNodeLength) ) {
+
+                    if(path[path.length - 1].tag !== tagContent.name.substring(1, tagContent.name.length) && path[path.length - 1].tag !== "root"){
+                        throw new Error("Позвольте, ошибочка вышла. Так делать-то, ай как мерзко!");
+                    }
+
+                    // проверочку надо сделать
+                    if ( result.start != prevNodeEnd ) {
                         blockValueNode = new DNode({
                             tag : "block.value",
-                            content : _string.substring(result.start, (prevNodeStartPos + prevNodeLength))
+                            content : _string.substring(prevNodeEnd, result.start)
                         });
                         path[path.length - 1].addChild(blockValueNode);
                         this.nodeCollection.push(blockValueNode);
@@ -138,8 +110,20 @@ var DTree = CClass.inherit({
                     path.pop();
                 }
 
+                if ( tagContent.name == "script" ) { //  тег есть скрипт
+                    var res = this.analyseScript(_string, result.end);
+                    prevNodeStartPos = res.start;
+                    prevNodeLength = res.end - res.start;
+                    prevNodeEnd = result.end;
+                    pos = res.end;
+                    console.log(tagContent);
+                    continue;
+                }
+
                 prevNodeStartPos = result.start;
                 prevNodeLength = result.end - result.start;
+                prevNodeEnd = result.end;
+                pos = result.end;
 
                 console.log(tagContent);
             }
@@ -303,11 +287,8 @@ var DParser = CClass.inherit({
             }
         }
 
-
         // пример цели поиска: lol="sdfdf" -> lol="
-
         var old_rx = /( +?|)([^ .]+?)\1=\1("|')|\1/;
-
         var rx = / *?([^ ^=.]+) *?(?:= *?("|')|)/i;
 
         while ( match = tag.match(rx) ) {

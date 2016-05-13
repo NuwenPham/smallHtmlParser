@@ -8,7 +8,7 @@
 #include <boost/regex.hpp>
 #include <boost/xpressive/xpressive.hpp>
 
-using namespace boost::xpressive;
+//using namespace boost::xpressive;
 
 int main(int argc, char *argv[])
 {
@@ -23,17 +23,19 @@ int main(int argc, char *argv[])
 //   boost::cmatch results;
 //   boost::regex_match(str, results, rx);
 
+    std::string str("lol=\"\"");
+    boost::regex rex = boost::regex( "(?:| +?)([^ .]+) *=", boost::regex_constants::ECMAScript );
+    boost::smatch what;
 
-std::string hello( "hello world!" );
-
-    sregex rex = sregex::compile( "(\\w+) (\\w+)!" );
-    smatch what;
-
-    if( regex_match( hello, what, rex ) )
+    if( regex_match( str, what, rex ) )
     {
-        std::cout << what[0] << '\n'; // whole match
-        std::cout << what[1] << '\n'; // first capture
-        std::cout << what[2] << '\n'; // second capture
+        std::cout << what.size() << '\n'; // whole match
+
+        int a = 0;
+        while(a < what.size()){
+            std::cout << what[a] << '\n'; // whole match
+            a++;
+        }
     }
 
    return 0;

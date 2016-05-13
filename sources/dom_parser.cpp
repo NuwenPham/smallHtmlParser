@@ -20,4 +20,15 @@ DOMTagContent DOMParser::parseHTMLTag(std::string _tag)
     std::string match;
     std::string tag = _tag;
     std::vector<DOMAttribute*> attrs;
+
+    boost::regex expression("(?:| +?)([^ .]+) *");
+    boost::smatch res;
+    boost::regex_match(_tag, res, expression);
+
+
+
+
+    // пример цели поиска: lol="" -> lol
+    // var tagName = _tag.match(/(?:| +?)([^ .]+) */i);
+
 }
